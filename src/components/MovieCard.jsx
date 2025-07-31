@@ -29,7 +29,7 @@ function MovieCard({ movie }) {
   }
 
   return (
-    <div className="bg-gray-800 w-64 lg:w-60 h-140 flex justify-center items-start flex-col ml-13 lg:ml-10 gap-1.5 p-5 lg:mt-15 mt-5 rounded">
+    <div className="bg-gray-800 w-64 lg:w-60 h-150 flex justify-center items-start flex-col ml-13 lg:ml-10 gap-1.5 p-5 lg:mt-15 mt-5 rounded">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}

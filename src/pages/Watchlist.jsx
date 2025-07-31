@@ -20,7 +20,7 @@ function Watchlist() {
     }
      
         return (
-            <div className="bg-gray-700 text-red-600 lg:text-5xl font-semibold lg:p-15 lg:m-50 lg:ml-120 ml-4 text-2xl mt-50 m-3 p-9  rounded-xl">
+            <div className="bg-gray-700 text-red-600 lg:text-5xl font-semibold lg:p-15 lg:m-50 lg:ml-120 ml-4 text-2xl mt-50 m-3 p-6 h-30  rounded-xl">
                 <h1 className="ml-5">NO MOVIES ADDED YET</h1>
                 <p className="lg:text-3xl text-xl italic lg:ml-8 ml-3">Start Adding Movies To Wathclist</p>
 
