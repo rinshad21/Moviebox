@@ -6,7 +6,7 @@ const { favorites } = useMoviecontext();
     if (favorites && favorites.length > 0) {
         return (
             <div>
-                <h3 className="font-semibold text-2xl lg:text-3xl lg:mt-2 mt-5 lg:ml-9 ml-17">Your Watchlist</h3>
+                <h3 className="font-semibold text-2xl lg:text-3xl lg:mt-2 mt-5 lg:ml-9 ml-17">Your Favorite films</h3>
                 <div className="flex flex-wrap gap-4 px-4">
                     {favorites.map((movie) => (
                         <MovieCard
