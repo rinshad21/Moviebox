@@ -22,7 +22,7 @@ function Watchlist() {
         return (
     <div className="flex items-center justify-center min-h-screen">
   <div className="bg-gray-700 text-red-600 text-2xl lg:text-5xl font-semibold rounded-xl p-8 m-7 lg:p-10 lg:m-16 lg:ml-64 text-center">
-    <h1 className="mt-4">NO MOVIES ADDED YET</h1>
+    <h1 className="text-xl mt-4">NO MOVIES ADDED YET</h1>
     <p className="text-sm italic mt-2  lg:text-3xl">Start Adding Movies To Watchlist</p>
   </div>
 </div>
