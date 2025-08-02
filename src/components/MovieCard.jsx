@@ -29,7 +29,7 @@ function MovieCard({ movie }) {
   }
 
   return (
-    <div className="bg-gray-800 w-64 lg:w-60 h-150 flex justify-center items-start flex-col ml-13 lg:ml-10 gap-1.5 p-5 lg:mt-15 mt-5 rounded">
+    <div className="bg-gray-800 w-64 lg:w-60 h-150  flex justify-center items-start flex-col ml-13 lg:ml-10 gap-1.5 p-5 lg:mt-15 mt-5 rounded">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
@@ -44,7 +44,7 @@ function MovieCard({ movie }) {
 
       <div>
         <button
-          className="text-xl rounded p-1 m-1 w-50 bg-[#24242b]"
+          className="text-xl rounded p-1 m-1 active:scale-110 w-50 bg-[#24242b]"
           onClick={handleAddToFavorites}
         >
           {isFavorite ? "❤️ Remove Favorite" : "🤍 Add to Favorites"}
@@ -53,7 +53,7 @@ function MovieCard({ movie }) {
 
       <div>
         <button
-          className="text-xl rounded p-1 m-1 w-50 bg-[#24242b]"
+          className="text-xl rounded p-1 active:scale-110 m-1 w-50 bg-[#24242b]"
           onClick={handleAddToWatchlist}
         >
           {isInWatchlist ? "Remove Watchlist" : "➕ Add to Watchlist"}

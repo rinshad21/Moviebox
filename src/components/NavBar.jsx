@@ -1,24 +1,44 @@
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-    return (
+    //usestate for hamburger
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu=()=>setIsOpen(!isOpen)
+
+  return (
+    <nav className="bg-slate-900 text-white rounded-xl mx-3 mt-4 px-4 py-3">
       
-      <nav className='bg-slate-900 rounded-xl ml-2 lg:ml-5 flex p-3 w-100 lg:w-360 md:w-200 lg:font-semibold 
-       lg:text-2xl text-xl h-15 lg:mt-8 mt-3'>
-            <div className="font-semibold  active:text-blue-900">
-                <Link to="/">MOVIEBOX</Link></div>
-          <div className=" active:text-blue-900 lg:ml-170 ml-5  text-ms">
-              <Link to="/">Home</Link>  
-          </div>
-           <div className="lg:ml-10 ml-3  active:text-blue-900 text-ms">
-              <Link to="/Favorites">Favorites</Link>   
-          </div>
-          <div className="lg:ml-10 ml-2 active:text-blue-900 text-ms">
-              <Link to="/Watchlist">Watchlist</Link>   
-          </div>
-        </nav>
-        
-  )
+      <div className="flex justify-between items-center">
+        <div className="text-2xl font-bold">
+          <Link to="/">MOVIEBOX</Link>
+        </div>
+
+        {/* Hamburger menu button */}
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="text-2xl">
+            {isOpen ? "✖" : "☰"}
+          </button>
+        </div>
+
+        {/* Desktop links */}
+        <div className="hidden lg:flex gap-8 text-lg font-semibold">
+          <Link to="/" className="hover:text-blue-400">Home</Link>
+          <Link to="/Favorites" className="hover:text-blue-400">Favorites</Link>
+          <Link to="/Watchlist" className="hover:text-blue-400">Watchlist</Link>
+        </div>
+      </div>
+
+      {/* Mobile dropdown links */}
+      {isOpen && (
+        <div className="lg:hidden flex flex-col mt-3 gap-3 text-base font-semibold">
+          <Link to="/" onClick={toggleMenu} className="active:text-blue-400">Home</Link>
+          <Link to="/Favorites" onClick={toggleMenu} className="active:text-blue-400">Favorites</Link>
+          <Link to="/Watchlist" onClick={toggleMenu} className="active:text-blue-400">Watchlist</Link>
+        </div>
+      )}
+    </nav>
+  );
 }
 
-export default NavBar
+export default NavBar;
