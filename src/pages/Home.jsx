@@ -9,13 +9,13 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  //we are loading popular movies here from api
+  //we are loading popular movies here from api.js
   useEffect(() => {
     const loadPopularMovies = async () => {
       try {
-        const popularMovies = await getPopularMovies();
-        setMovies(popularMovies);
-        setError(null);
+        const popularMovies = await getPopularMovies(); //get popular movies from tmdb api 
+        setMovies(popularMovies);//update ui to populare movies
+        setError(null);//clear previous error
       } catch (err) {
         console.log(err);
         setError("failed to load");
@@ -23,7 +23,7 @@ function Home() {
         setLoading(false);
       }
     };
-    loadPopularMovies();
+    loadPopularMovies();//runs on MOUNt
   }, []);
 
   //function that handle serching of movies
@@ -71,8 +71,9 @@ function Home() {
       {loading ? (
         <div className="flex items-center mt-60 ml-30  lg:ml-60  text-5xl">Loading...</div>
       ) : (
-        <div className="flex flex-wrap gap-4 px-4">
-          {movies.map((movie) => (
+          <div className="flex flex-wrap gap-4 px-4">
+            {/* displaying moviecard on the home ui by loading props */}
+            {movies.map((movie) => (
             <MovieCard
               key={movie.id}
               movie={movie}
