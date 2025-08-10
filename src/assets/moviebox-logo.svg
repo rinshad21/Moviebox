@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="160" viewBox="0 0 512 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">MovieBox logo</title>
+  <desc>Modern Letterboxd-inspired MovieBox logo with vibrant colors</desc>
+
+  <defs>
+    <!-- Vibrant gradient -->
+    <linearGradient id="ticketGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#00d084"/> <!-- Letterboxd green -->
+      <stop offset="1" stop-color="#ff8a00"/> <!-- Letterboxd orange -->
+    </linearGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <style>
+      .word { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-weight: 700; letter-spacing: -0.5px; }
+      .tag { font-family: "Inter", Arial, sans-serif; font-size: 13px; fill: #9ca3af; letter-spacing: 0.3px; }
+    </style>
+  </defs>
+
+  <!-- Dark background ticket -->
+  <g transform="translate(8,12)" filter="url(#softShadow)">
+    <rect x="0" y="0" rx="16" ry="16" width="120" height="120" fill="#1a1a1a"/>
+    <!-- gradient accent bar at bottom -->
+    <rect x="0" y="100" width="120" height="20" rx="0" ry="0" fill="url(#ticketGrad)"/>
+    <!-- play triangle in vibrant gradient -->
+    <polygon points="50,44 50,80 84,62" fill="url(#ticketGrad)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(148,58)">
+    <text x="0" y="28" font-size="38" class="word" fill="#ffffff">Movie</text>
+    <text x="126" y="28" font-size="38" class="word" fill="url(#ticketGrad)">Box</text>
+    <text x="0" y="54" class="tag">Discover • Track • Watch</text>
+  </g>
+</svg>
